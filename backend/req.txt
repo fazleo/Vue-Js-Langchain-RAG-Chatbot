@@ -1,0 +1,8 @@
+langchain-groq
+langchain
+langchain-core
+langchain-community
+langchain-classic
+pdfminer.six
+pydantic-settings
+langchain-google-genai
