@@ -3,6 +3,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 from app.rag.vectordb import get_vector_db
 from app.rag.prompts import prompt
+from app.core.config import settings
 
 
 def augment_context(input_dict):
@@ -29,7 +30,8 @@ def build_rag_chain(collection_name='default'):
     )
 
     llm = ChatGroq(
-        model = "openai/gpt-oss-20b"
+        model = "openai/gpt-oss-20b",
+        api_key = settings.GROQ_API_KEY
     )
 
     chain = { 'query' :RunnablePassthrough(), 'docs': retriever} | RunnableLambda(augment_context) | prompt | llm | StrOutputParser()

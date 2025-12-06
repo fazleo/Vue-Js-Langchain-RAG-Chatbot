@@ -6,5 +6,5 @@ def get_vector_db(collection_name="default"):
     return Chroma(
         collection_name=collection_name,
         embedding_function=get_embedder(),
-        persist_directory=settings.CHROMADB_DIR,  # Where to save data locally, remove if not necessary
+        persist_directory=settings.CHROMA_DB_DIR,  # Where to save data locally, remove if not necessary
     )
