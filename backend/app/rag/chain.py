@@ -4,6 +4,10 @@ from langchain_groq import ChatGroq
 from app.rag.vectordb import get_vector_db
 from app.rag.prompts import prompt
 from app.core.config import settings
+from app.core.logger import get_logger
+
+logger = get_logger(__name__)
+
 
 
 def augment_context(input_dict):
@@ -22,10 +26,14 @@ def augment_context(input_dict):
 
 def build_rag_chain(collection_name='default'):
 
+    logger.info(f"Collection Name: {collection_name}")
+
     vector_db = get_vector_db()
     retriever = vector_db.as_retriever(
+        search_type="similarity",
         search_kwargs = {
-            'k' : 5
+            'k' : 5,
+            # "filter": {"collection_name": collection_name}
         }
     )
 

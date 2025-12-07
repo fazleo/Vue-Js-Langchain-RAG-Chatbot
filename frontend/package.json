@@ -1,0 +1,19 @@
+{
+  "name": "rag-chat-frontend",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "^3.11.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}

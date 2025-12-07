@@ -1,1 +1,19 @@
-backend/.env
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# Nuxt/Vue
+.nuxt/
+.output/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db

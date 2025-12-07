@@ -60,7 +60,7 @@ async def upload_and_ingest(
             )
 
    
-        docs =  load_documents_from_path(str(file_path))
+        docs =  load_documents_from_path(str(file_path), collection_name=collection_name)
     
         if not docs:
             raise HTTPException(

@@ -6,6 +6,6 @@ router = APIRouter()
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(req: ChatRequest):
-    chain = build_rag_chain()
+    chain = build_rag_chain(collection_name=req.collection_name)
     answer = chain.invoke(req.question)
     return ChatResponse(answer = answer)
